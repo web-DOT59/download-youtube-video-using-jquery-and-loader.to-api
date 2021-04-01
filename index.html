@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="txt" name="link" class="link" required>
+<select class="formate" required>
+	<option value="mp3">mp3</option>
+	<option value="360">360 mp4</option>
+	<option value="480">480 mp4</option>
+	<option value="720">720 mp4</option>
+	<option value="1080">1080 mp4</option>
+	<option value="4k">4k mp4</option>
+
+</select>
+<div class="download-video">
+	<button type="submit" class="btn">click to download</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(".btn").click(function(){
+		var link=$(".link").val();
+		var formate=$(".formate").children("option:selected").val();
+		downloadVideo(link,formate)
+	})
+	function downloadVideo(link,formate){
+		$(".download-video").html('<iframe style="width:230px;height:60px;border:0;overflow:hidden;" scrolling="no" src="https://loader.to/api/button/?url='+link+'&f='+formate+'"></iframe>')
+	}
+</script>
+
+
+
+
+
+</body>
+</html>
